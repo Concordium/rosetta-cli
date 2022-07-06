@@ -17,6 +17,8 @@ require (
 	golang.org/x/sys v0.0.0-20211205182925-97ca703d548d // indirect
 )
 
-require github.com/anaskhan96/base58check v0.0.0-20181220122047-b05365d494c4
+require (
+	github.com/btcsuite/btcd/btcutil v1.1.1
+)
 
 replace github.com/coinbase/rosetta-sdk-go => github.com/Concordium/rosetta-sdk-go v0.7.11-0.20220706095914-7942ab456d4f
