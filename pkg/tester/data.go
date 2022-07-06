@@ -331,7 +331,7 @@ func InitializeData(
 		statefulsyncer.WithSeenConcurrency(int64(config.SeenBlockWorkers)),
 		statefulsyncer.WithExtraSyncerOpts(
 			syncer.WithCustomHelper(func(h syncer.Helper) syncer.Helper {
-				return concordiumHelper{helper: h}
+				return newConcordiumHelper(h)
 			}),
 		),
 	}
