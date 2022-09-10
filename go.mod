@@ -15,5 +15,8 @@ require (
 	go.uber.org/zap v1.21.0
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/sys v0.0.0-20211205182925-97ca703d548d // indirect
-	google.golang.org/protobuf v1.27.1 // indirect
 )
+
+require github.com/btcsuite/btcd/btcutil v1.1.1
+
+replace github.com/coinbase/rosetta-sdk-go => github.com/Concordium/rosetta-sdk-go v0.7.11-0.20220706095914-7942ab456d4f
