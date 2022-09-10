@@ -329,10 +329,14 @@ func InitializeData(
 		statefulsyncer.WithMaxConcurrency(config.MaxSyncConcurrency),
 		statefulsyncer.WithPastBlockLimit(config.MaxReorgDepth),
 		statefulsyncer.WithSeenConcurrency(int64(config.SeenBlockWorkers)),
-		statefulsyncer.WithExtraSyncerOpts(
-			syncer.WithCustomHelper(func(h syncer.Helper) syncer.Helper {
-				return newConcordiumHelper(h)
-			}),
+		statefulsyncer.WithCustomSyncerOpts(
+			func(opts ...syncer.Option) []syncer.Option {
+				return append(
+					opts,
+					syncer.WithCustomHelper(func(h syncer.Helper) syncer.Helper {
+						return newConcordiumHelper(h)
+					}))
+			},
 		),
 	}
 	if config.Data.PruningFrequency != nil {

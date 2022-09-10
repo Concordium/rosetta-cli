@@ -21,4 +21,4 @@ require (
 	github.com/btcsuite/btcd/btcutil v1.1.1
 )
 
-replace github.com/coinbase/rosetta-sdk-go => github.com/Concordium/rosetta-sdk-go v0.7.11-0.20220706095914-7942ab456d4f
+replace github.com/coinbase/rosetta-sdk-go => ../rosetta-sdk-go
